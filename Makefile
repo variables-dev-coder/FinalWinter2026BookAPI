@@ -5,8 +5,10 @@
 # Build the Docker image
 build:
 	docker buildx build \
-      --platform linux/amd64 \
-      -t jkells/bookapp:latest .
+		--platform linux/amd64,linux/arm64 \
+		-t jkells/bookapp:latest \
+		--push \
+		.
 
 # Run the container
 run:
@@ -23,5 +25,3 @@ logs:
 clean:
 	docker system prune -af
 
-push:
-	docker push jkells/bookapp:latest
