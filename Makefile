@@ -7,7 +7,6 @@ build:
 	docker buildx build \
 		--platform linux/amd64,linux/arm64 \
 		-t jkells/bookapp:latest \
-		--push \
 		.
 
 # Run the container
